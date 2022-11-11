@@ -20,22 +20,12 @@ RSpec.describe Enigma do
   end 
 
   describe "#generate_offset" do 
-    it 'will generate a date offset' do 
+    xit 'will generate a date offset' do 
       enigma = Enigma.new
       offset = enigma.generate_offset
 
       expect(offset).to be_a(String)
       expect(offset.length).to eq(4)
-    end 
-  end 
-
-  describe "add_keys" do
-    xit 'will add the key and date_key together' do 
-      enigma = Enigma.new
-      offset = enigma.generate_offset
-      key = enigma.generate_key
-      algorithim_key = enigma.add_keys(offset, key)
-      expect(algorithim_key.length).to eq(4)
     end 
   end 
 
@@ -45,9 +35,22 @@ RSpec.describe Enigma do
       offset = enigma.generate_offset
       key = enigma.generate_key
       key_hash = enigma.key_hash
-      
+     
       expect(key_hash).to be_a(Hash)
     end 
   end
 
+  describe "add_keys" do
+    it 'will add the key and date_key together' do 
+      enigma = Enigma.new
+      offset = enigma.generate_offset
+      key = enigma.generate_key
+      key_hash = enigma.key_hash
+      original_values = key_hash.values
+      enigma.add_keys(offset)
+      new_values = key_hash.values 
+
+      expect(new_values).to be > (original_values)
+    end 
+  end 
 end 
