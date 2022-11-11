@@ -6,7 +6,6 @@ class Enigma
   end 
 end 
 
-#initialize method 
 
 #write a method to generate 5 random numbers 
 
