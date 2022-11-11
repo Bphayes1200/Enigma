@@ -13,8 +13,11 @@ RSpec.describe Enigma do
   describe "#generate_key" do 
     it 'will generate a random 5 digit key' do 
       enigma = Enigma.new
-
-      expect(enigma.generate_key).to be_a(String)
+      key = enigma.generate_key
+      expect(key).to be_a(String)
+      expect(key.length).to eq(5)
+      
+      
     end 
   end 
 end 

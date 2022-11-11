@@ -4,12 +4,16 @@ class Enigma
   def initialize
     @letters = ("a".."z").to_a << " "
   end 
-end 
+
 
 
 #write a method to generate 5 random numbers 
-
-
+  def generate_key
+    numbers = (1..9).to_a
+    key  = numbers.sample(5)
+    key.join.to_s
+  end 
+end 
 #write generate key method
 
 #write generate date key method
