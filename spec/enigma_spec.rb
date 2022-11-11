@@ -15,9 +15,17 @@ RSpec.describe Enigma do
       enigma = Enigma.new
       key = enigma.generate_key
       expect(key).to be_a(String)
-      expect(key.length).to eq(5)
-      
-      
+      expect(key.length).to eq(5)   
+    end 
+  end 
+
+  describe "#generate_date_key" do 
+    it 'will generate a date key' do 
+      enigma = Enigma.new
+      date_key = enigma.genterate_date_key
+
+      expect(date_key).to be_a(String)
+      expect(date_key.length).to eq(6)
     end 
   end 
 end 
