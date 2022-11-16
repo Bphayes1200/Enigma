@@ -31,8 +31,19 @@ class Enigma
   end 
   #write method that adds the keys together
   def add_keys(offset)
-    
+    new_hash = {}
+    offset.each do |num|
+        key_hash.each do |key, value|
+        new_value = value += num
+        new_hash[key] = new_value
+        require 'pry'; binding.pry
+      end 
+    end 
+    new_hash
+  
+
   end 
+        
 
 end 
 
